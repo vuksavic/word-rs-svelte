@@ -15,7 +15,7 @@
     <div class="flex items-center justify-between h-16">
       <!-- Logo -->
       <div class="flex-shrink-0">
-        <a href="#" class="text-2xl font-serif font-bold tracking-wider text-slate-900 dark:text-white">
+        <a href="#top" class="text-2xl font-serif font-bold tracking-wider text-slate-900 dark:text-white">
           WORD
         </a>
       </div>

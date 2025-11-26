@@ -8,9 +8,7 @@
   <div class="absolute inset-0 z-0">
     <!-- Replace this with your actual background image -->
     <div class="absolute inset-0 bg-gradient-to-br from-slate-100 via-white to-slate-50 dark:from-zinc-900 dark:via-zinc-800 dark:to-zinc-900"></div>
-    <!-- Optional: Add actual image here
-    <img src="/images/hero-background.jpg" alt="" class="w-full h-full object-cover opacity-20 dark:opacity-10" />
-    -->
+    <img src="/images/hero-background.jpg" alt="" class="w-full h-full object-cover opacity-10 dark:opacity-10" />
     <!-- Pattern overlay -->
     <div class="absolute inset-0 hero-pattern opacity-50"></div>
     <!-- Gradient overlay for text readability -->

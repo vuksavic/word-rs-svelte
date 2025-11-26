@@ -55,21 +55,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Lora:wght@500;700&display=swap" rel="stylesheet">
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: {
-            'sans': ['Inter', 'sans-serif'],
-            'serif': ['Lora', 'serif'],
-          }
-        }
-      }
-    }
-  </script>
 </svelte:head>
 
 <div class:dark={$isDarkMode}>
