@@ -14,11 +14,13 @@
     // Initialize theme
     isDarkMode.initialize();
 
-    // Setup Intersection Observer for scroll animations
+    // Setup Intersection Observer for scroll animations with better performance
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('animate-in');
+          // Disconnect observer after element animates (performance optimization)
+          observer.unobserve(entry.target);
         }
       });
     }, {
@@ -26,10 +28,19 @@
       rootMargin: '0px 0px -50px 0px'
     });
 
-    // Observe all elements with the 'scroll-animate' class
-    document.querySelectorAll('.scroll-animate').forEach(el => {
-      observer.observe(el);
-    });
+    // Use requestIdleCallback for better performance
+    const observeElements = () => {
+      document.querySelectorAll('.scroll-animate').forEach(el => {
+        observer.observe(el);
+      });
+    };
+
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(observeElements);
+    } else {
+      // Fallback for browsers without requestIdleCallback
+      setTimeout(observeElements, 1);
+    }
 
     return () => observer.disconnect();
   });
@@ -82,6 +93,12 @@
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  /* CSS containment for better performance - but not on hero to prevent button clipping */
+  :global(section:not(:first-of-type) .scroll-animate) {
+    contain: layout style paint;
+    content-visibility: auto;
   }
 
   :global(.scroll-animate.animate-in) {

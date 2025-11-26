@@ -3,7 +3,7 @@
   import { content } from '$lib/data/content.js';
 </script>
 
-<section class="relative bg-white dark:bg-zinc-900 min-h-screen flex items-center overflow-hidden">
+<section class="relative bg-white dark:bg-zinc-900 min-h-screen flex items-center overflow-hidden pb-16">
   <!-- Background image with overlay -->
   <div class="absolute inset-0 z-0">
     <!-- Background gradient fallback -->
