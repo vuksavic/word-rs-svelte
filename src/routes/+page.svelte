@@ -51,10 +51,11 @@
   <meta property="twitter:title" content={$currentLanguage === 'sr' ? 'WORD - Prevodilačka agencija u Beogradu' : 'WORD - Translation Agency in Belgrade'} />
   <meta property="twitter:description" content={$currentLanguage === 'sr' ? 'Vaš pouzdan partner za profesionalne prevodilačke i usmene usluge u srcu Beograda.' : 'Your trusted partner for professional translation and interpretation services in the heart of Belgrade.'} />
 
-  <!-- Import Google Fonts -->
+  <!-- Import Google Fonts with performance optimizations -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Lora:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Lora:wght@500;700&display=swap">
+  {@html '<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Lora:wght@500;700&display=swap" rel="stylesheet" media="print" onload="this.media=\'all\'"><noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Lora:wght@500;700&display=swap" rel="stylesheet"></noscript>'}
 </svelte:head>
 
 <div class:dark={$isDarkMode}>

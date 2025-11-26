@@ -6,9 +6,20 @@
 <section class="relative bg-white dark:bg-zinc-900 min-h-screen flex items-center overflow-hidden">
   <!-- Background image with overlay -->
   <div class="absolute inset-0 z-0">
-    <!-- Replace this with your actual background image -->
+    <!-- Background gradient fallback -->
     <div class="absolute inset-0 bg-gradient-to-br from-slate-100 via-white to-slate-50 dark:from-zinc-900 dark:via-zinc-800 dark:to-zinc-900"></div>
-    <img src="/images/hero-background.jpg" alt="" class="w-full h-full object-cover opacity-10 dark:opacity-10" />
+    <!-- Optimized background image with WebP support -->
+    <picture>
+      <source srcset="/images/hero-background.webp" type="image/webp" />
+      <img
+        src="/images/hero-background.jpg"
+        alt=""
+        class="w-full h-full object-cover opacity-10 dark:opacity-10"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      />
+    </picture>
     <!-- Pattern overlay -->
     <div class="absolute inset-0 hero-pattern opacity-50"></div>
     <!-- Gradient overlay for text readability -->
