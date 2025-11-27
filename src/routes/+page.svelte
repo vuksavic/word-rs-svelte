@@ -11,9 +11,6 @@
   import Contact from '$lib/components/Contact.svelte';
 
   onMount(() => {
-    // Initialize theme
-    isDarkMode.initialize();
-
     // Setup Intersection Observer for scroll animations with better performance
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -69,19 +66,17 @@
   {@html '<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Lora:wght@500;700&display=swap" rel="stylesheet" media="print" onload="this.media=\'all\'"><noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Lora:wght@500;700&display=swap" rel="stylesheet"></noscript>'}
 </svelte:head>
 
-<div class:dark={$isDarkMode}>
-  <div class="bg-slate-50 dark:bg-zinc-900 font-sans text-slate-800 dark:text-zinc-200 transition-colors duration-300">
-    <Header />
+<div class="bg-slate-50 dark:bg-zinc-900 font-sans text-slate-800 dark:text-zinc-200 transition-colors duration-300">
+  <Header />
 
-    <main>
-      <Hero />
-      <Services />
-      <WhyUs />
-      <About />
-      <FAQ />
-      <Contact />
-    </main>
-  </div>
+  <main>
+    <Hero />
+    <Services />
+    <WhyUs />
+    <About />
+    <FAQ />
+    <Contact />
+  </main>
 </div>
 
 <style>
