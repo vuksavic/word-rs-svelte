@@ -6,7 +6,7 @@ export const content = {
       about: 'O nama',
       faq: 'Pitanja',
       contact: 'Kontakt',
-      getQuote: 'Zatražite ponudu'
+      getQuote: 'Pozovite sada'
     },
     hero: {
       title: 'Prevodilačka agencija WORD',
@@ -132,7 +132,7 @@ export const content = {
       getQuote: 'Call Now'
     },
     hero: {
-      title: 'WORD Translation Agency',
+      title: 'WORD Translation and Interpretation Agency',
       subtitle:
 				'Professional and expert translation services',
       ctaButton: 'Contact Us'
