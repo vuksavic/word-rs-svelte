@@ -10,8 +10,9 @@
       <p class="mt-4 text-lg text-slate-600 dark:text-zinc-400">{content[$currentLanguage].servicesSection.subtitle}</p>
     </div>
     <div class="mt-16 grid gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-      {#each content[$currentLanguage].services as service}
+      {#each content[$currentLanguage].services as service, i (i)}
         <div class="scroll-animate bg-white dark:bg-zinc-800/50 p-8 rounded-xl border border-slate-200 dark:border-zinc-800 text-center shadow-sm hover:shadow-lg hover:scale-105 dark:hover:border-zinc-700 transition-all duration-300">
+          <!-- eslint-disable-next-line svelte/no-at-html-tags -->
           {@html service.icon}
           <h3 class="mt-2 text-xl font-bold text-slate-900 dark:text-white">{service.title}</h3>
           <p class="mt-2 text-slate-600 dark:text-zinc-400">{service.description}</p>

@@ -18,7 +18,7 @@
       </div>
 
       <div class="mt-12 space-y-4">
-        {#each content[$currentLanguage].faq.questions as faqItem, index}
+        {#each content[$currentLanguage].faq.questions as faqItem, index (index)}
           <div class="scroll-animate border border-slate-200 dark:border-zinc-800 rounded-lg overflow-hidden bg-white dark:bg-zinc-800/50">
             <button
               on:click={() => toggleFaq(index)}
@@ -26,7 +26,7 @@
             >
               <span class="text-lg font-medium text-slate-900 dark:text-white pr-4">{faqItem.question}</span>
               <svg
-                class="w-5 h-5 text-slate-500 dark:text-zinc-400 flex-shrink-0 transition-transform duration-300"
+                class="w-5 h-5 text-slate-500 dark:text-zinc-400 shrink-0 transition-transform duration-300"
                 class:rotate-180={openFaqIndex === index}
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

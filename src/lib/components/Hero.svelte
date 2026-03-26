@@ -7,14 +7,14 @@
   <!-- Background image with overlay -->
   <div class="absolute inset-0 z-0">
     <!-- Background gradient fallback -->
-    <div class="absolute inset-0 bg-gradient-to-br from-slate-100 via-white to-slate-50 dark:from-zinc-900 dark:via-zinc-800 dark:to-zinc-900"></div>
+    <div class="absolute inset-0 bg-linear-to-br from-slate-100 via-white to-slate-50 dark:from-zinc-900 dark:via-zinc-800 dark:to-zinc-900"></div>
     <!-- Optimized background image with WebP support -->
     <picture>
       <source srcset="/images/hero-background.webp" type="image/webp" />
       <img
         src="/images/hero-background.jpg"
         alt=""
-        class="w-full h-full object-cover opacity-10 dark:opacity-10"
+        class="w-full h-full object-cover opacity-30 dark:opacity-5"
         loading="eager"
         fetchpriority="high"
         decoding="async"
@@ -23,7 +23,7 @@
     <!-- Pattern overlay -->
     <div class="absolute inset-0 hero-pattern opacity-50"></div>
     <!-- Gradient overlay for text readability -->
-    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-white/30 to-white/80 dark:from-transparent dark:via-zinc-900/30 dark:to-zinc-900/80"></div>
+    <div class="absolute inset-0 bg-linear-to-b from-transparent via-white/10 to-white/50 dark:from-transparent dark:via-zinc-900/10 dark:to-zinc-900/50"></div>
   </div>
 
   <!-- Content -->

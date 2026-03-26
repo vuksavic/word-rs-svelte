@@ -26,7 +26,7 @@
              Place your image in: static/images/belgrade.jpg
              Then update src to: /images/belgrade.jpg
         -->
-        <img src="https://placehold.co/600x400/e2e8f0/64748b?text=Replace+with+Belgrade+Photo" alt="Belgrade city skyline" class="w-full h-full object-cover dark:opacity-80">
+        <img src="/images/belgrade.jpg" alt="Belgrade city skyline" class="w-full h-full object-cover dark:opacity-80">
       </div>
     </div>
   </div>

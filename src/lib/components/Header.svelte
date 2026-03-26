@@ -14,7 +14,7 @@
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
       <!-- Logo -->
-      <div class="flex-shrink-0">
+      <div class="shrink-0">
         <a href="#top" class="text-2xl font-serif font-bold tracking-wider text-slate-900 dark:text-white">
           WORD
         </a>
