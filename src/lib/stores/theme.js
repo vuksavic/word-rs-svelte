@@ -21,8 +21,7 @@ function createThemeStore () {
         }
         return newValue
       })
-    },
-    set
+    }
   }
 }
 

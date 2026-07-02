@@ -1,7 +1,6 @@
 <script>
   import { onMount } from 'svelte';
   import { currentLanguage } from '$lib/stores/language.js';
-  import { isDarkMode } from '$lib/stores/theme.js';
   import Header from '$lib/components/Header.svelte';
   import Hero from '$lib/components/Hero.svelte';
   import Services from '$lib/components/Services.svelte';
@@ -9,6 +8,34 @@
   import About from '$lib/components/About.svelte';
   import FAQ from '$lib/components/FAQ.svelte';
   import Contact from '$lib/components/Contact.svelte';
+
+  // LocalBusiness structured data for rich results / local SEO. Language-neutral.
+  const jsonLd = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'ProfessionalService',
+    name: 'Prevodilačka agencija WORD',
+    description: 'Profesionalna prevodilačka agencija u Beogradu — prevod dokumenata, overeni prevodi, usmeno prevođenje i lokalizacija.',
+    url: 'https://word.rs/',
+    telephone: '+38163217412',
+    email: 'svujovic@word.rs',
+    image: 'https://word.rs/images/hero-background.jpg',
+    foundingDate: '2010',
+    priceRange: '$$',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Topličin venac 7',
+      addressLocality: 'Beograd',
+      postalCode: '11000',
+      addressCountry: 'RS'
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 44.8161717764418,
+      longitude: 20.453315276725565
+    },
+    areaServed: 'RS',
+    sameAs: ['https://www.linkedin.com/in/snezana-vujovic-1653bbb/']
+  });
 
   onMount(() => {
     // Setup Intersection Observer for scroll animations with better performance
@@ -44,20 +71,28 @@
 </script>
 
 <svelte:head>
-  <title>{$currentLanguage === 'sr' ? 'Predvodilačka agencija WORD' : 'WORD - Translation and Interpretation Agency'}</title>
+  <title>{$currentLanguage === 'sr' ? 'Prevodilačka agencija WORD' : 'WORD - Translation and Interpretation Agency'}</title>
+  <link rel="canonical" href="https://word.rs/" />
   <meta name="description" content={$currentLanguage === 'sr' ? 'Profesionalna prevodilačka agencija u Beogradu. Nudimo prevod dokumenata, usmeno prevođenje i lokalizaciju. Sertifikovani lingvisti, stroga poverljivost, isporuka na vreme.' : 'Professional translation agency in Belgrade. We offer document translation, interpretation services, and localization. Certified linguists, strict confidentiality, on-time delivery.'} />
   <meta name="keywords" content={$currentLanguage === 'sr' ? 'prevodilačka agencija, prevod dokumenata, usmeno prevođenje, lokalizacija, Beograd, Srbija, profesionalni prevod' : 'translation agency, document translation, interpretation, localization, Belgrade, Serbia, professional translation'} />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Prevodilačka agencija WORD" />
+  <meta property="og:locale" content={$currentLanguage === 'sr' ? 'sr_RS' : 'en_US'} />
   <meta property="og:title" content={$currentLanguage === 'sr' ? 'WORD - Prevodilačka agencija u Beogradu' : 'WORD - Translation Agency in Belgrade'} />
   <meta property="og:description" content={$currentLanguage === 'sr' ? 'Vaš pouzdan partner za profesionalne prevodilačke i usmene usluge u srcu Beograda.' : 'Your trusted partner for professional translation and interpretation services in the heart of Belgrade.'} />
-  <meta property="og:url" content="https://word.rs" />
+  <meta property="og:url" content="https://word.rs/" />
+  <meta property="og:image" content="https://word.rs/images/hero-background.jpg" />
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:title" content={$currentLanguage === 'sr' ? 'WORD - Prevodilačka agencija u Beogradu' : 'WORD - Translation Agency in Belgrade'} />
   <meta property="twitter:description" content={$currentLanguage === 'sr' ? 'Vaš pouzdan partner za profesionalne prevodilačke i usmene usluge u srcu Beograda.' : 'Your trusted partner for professional translation and interpretation services in the heart of Belgrade.'} />
+  <meta property="twitter:image" content="https://word.rs/images/hero-background.jpg" />
+
+  <!-- Structured data (LocalBusiness) -->
+  {@html `<script type="application/ld+json">${jsonLd}<\/script>`}
 
   <!-- Import Google Fonts with performance optimizations -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
