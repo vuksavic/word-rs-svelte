@@ -3,16 +3,16 @@
   import { content } from '$lib/data/content.js';
 </script>
 
-<section id="contact" class="bg-slate-800 dark:bg-zinc-950 text-white min-h-screen flex flex-col">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8 w-full grow py-20 flex flex-col justify-center">
+<section id="contact" class="bg-slate-800 dark:bg-zinc-950 text-white">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 w-full py-20 sm:py-24">
     <div class="max-w-xl mx-auto text-center scroll-animate mb-16">
       <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white">{content[$currentLanguage].contactSection.title}</h2>
       <p class="mt-4 text-lg text-slate-300 dark:text-zinc-400">{content[$currentLanguage].contactSection.subtitle}</p>
     </div>
 
-    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 text-left w-full">
+    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-12 items-center text-left w-full">
       <!-- Left side: Contact Info -->
-      <div class="text-slate-300 dark:text-zinc-400 flex flex-col justify-center scroll-animate">
+      <div class="md:col-span-2 text-slate-300 dark:text-zinc-400 scroll-animate">
         <h3 class="text-2xl font-serif font-bold text-white">WORD</h3>
         <p class="mt-4">Topličin venac 7<br>11000 Beograd, Srbija</p>
         <p class="mt-4">PIB: 106411028</p>
@@ -28,7 +28,7 @@
         </div>
       </div>
       <!-- Right side: Map -->
-      <div class="rounded-lg overflow-hidden h-96 md:h-full shadow-lg scroll-animate">
+      <div class="md:col-span-3 rounded-lg overflow-hidden h-72 sm:h-96 shadow-lg scroll-animate">
         <iframe
           title="Location"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.2647023006016!2d20.453315276725565!3d44.8161717764418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a654d48964487%3A0x8942c17e58995274!2sPrevodila%C4%8Dka%20agencija%20Word!5e0!3m2!1sen!2srs!4v1760049549111!5m2!1sen!2srs"
