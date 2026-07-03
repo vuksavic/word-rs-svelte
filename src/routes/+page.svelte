@@ -117,6 +117,7 @@
 <style>
   :global(html) {
     scroll-behavior: smooth;
+    scroll-padding-top: 4rem; /* keep anchor targets clear of the sticky h-16 header */
   }
 
   :global(.scroll-animate) {
