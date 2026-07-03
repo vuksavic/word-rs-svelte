@@ -26,7 +26,7 @@
              Place your image in: static/images/belgrade.jpg
              Then update src to: /images/belgrade.jpg
         -->
-        <img src="/images/belgrade.jpg" alt="Belgrade city skyline" class="w-full h-full object-cover dark:opacity-80">
+        <img src="/images/belgrade.webp" alt="Belgrade city skyline" width="800" height="600" loading="lazy" decoding="async" class="w-full h-full object-cover dark:opacity-80">
       </div>
     </div>
   </div>

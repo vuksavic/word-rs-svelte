@@ -22,6 +22,7 @@
           <div class="scroll-animate border border-slate-200 dark:border-zinc-800 rounded-lg overflow-hidden bg-white dark:bg-zinc-800/50">
             <button
               on:click={() => toggleFaq(index)}
+              aria-expanded={openFaqIndex === index}
               class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-slate-50 dark:hover:bg-zinc-800 transition-colors"
             >
               <span class="text-lg font-medium text-slate-900 dark:text-white pr-4">{faqItem.question}</span>

@@ -30,5 +30,9 @@
 		"svelte": "^5.39.5",
 		"tailwindcss": "^4.1.17",
 		"vite": "^7.1.7"
+	},
+	"dependencies": {
+		"@fontsource/inter": "^5.2.8",
+		"@fontsource/lora": "^5.2.8"
 	}
 }

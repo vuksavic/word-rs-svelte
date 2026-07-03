@@ -1,5 +1,6 @@
 <script>
   import { onMount } from 'svelte';
+  import { browser } from '$app/environment';
   import { currentLanguage } from '$lib/stores/language.js';
   import Header from '$lib/components/Header.svelte';
   import Hero from '$lib/components/Hero.svelte';
@@ -18,7 +19,7 @@
     url: 'https://word.rs/',
     telephone: '+38163217412',
     email: 'svujovic@word.rs',
-    image: 'https://word.rs/images/hero-background.jpg',
+    image: 'https://word.rs/images/og-image.jpg',
     foundingDate: '2010',
     priceRange: '$$',
     address: {
@@ -68,13 +69,15 @@
 
     return () => observer.disconnect();
   });
+
+  // Keep <html lang> in sync with the UI language for a11y/SEO
+  $: if (browser) document.documentElement.lang = $currentLanguage;
 </script>
 
 <svelte:head>
-  <title>{$currentLanguage === 'sr' ? 'Prevodilačka agencija WORD' : 'WORD - Translation and Interpretation Agency'}</title>
+  <title>{$currentLanguage === 'sr' ? 'Prevodilačka agencija WORD | Beograd' : 'WORD - Translation and Interpretation Agency | Belgrade'}</title>
   <link rel="canonical" href="https://word.rs/" />
   <meta name="description" content={$currentLanguage === 'sr' ? 'Profesionalna prevodilačka agencija u Beogradu. Nudimo prevod dokumenata, usmeno prevođenje i lokalizaciju. Sertifikovani lingvisti, stroga poverljivost, isporuka na vreme.' : 'Professional translation agency in Belgrade. We offer document translation, interpretation services, and localization. Certified linguists, strict confidentiality, on-time delivery.'} />
-  <meta name="keywords" content={$currentLanguage === 'sr' ? 'prevodilačka agencija, prevod dokumenata, usmeno prevođenje, lokalizacija, Beograd, Srbija, profesionalni prevod' : 'translation agency, document translation, interpretation, localization, Belgrade, Serbia, professional translation'} />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
@@ -83,22 +86,19 @@
   <meta property="og:title" content={$currentLanguage === 'sr' ? 'WORD - Prevodilačka agencija u Beogradu' : 'WORD - Translation Agency in Belgrade'} />
   <meta property="og:description" content={$currentLanguage === 'sr' ? 'Vaš pouzdan partner za profesionalne prevodilačke i usmene usluge u srcu Beograda.' : 'Your trusted partner for professional translation and interpretation services in the heart of Belgrade.'} />
   <meta property="og:url" content="https://word.rs/" />
-  <meta property="og:image" content="https://word.rs/images/hero-background.jpg" />
+  <meta property="og:image" content="https://word.rs/images/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content={$currentLanguage === 'sr' ? 'Ulaz u prevodilačku agenciju WORD, Topličin venac 7, Beograd' : 'Entrance of WORD translation agency, Topličin venac 7, Belgrade'} />
 
   <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:title" content={$currentLanguage === 'sr' ? 'WORD - Prevodilačka agencija u Beogradu' : 'WORD - Translation Agency in Belgrade'} />
-  <meta property="twitter:description" content={$currentLanguage === 'sr' ? 'Vaš pouzdan partner za profesionalne prevodilačke i usmene usluge u srcu Beograda.' : 'Your trusted partner for professional translation and interpretation services in the heart of Belgrade.'} />
-  <meta property="twitter:image" content="https://word.rs/images/hero-background.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={$currentLanguage === 'sr' ? 'WORD - Prevodilačka agencija u Beogradu' : 'WORD - Translation Agency in Belgrade'} />
+  <meta name="twitter:description" content={$currentLanguage === 'sr' ? 'Vaš pouzdan partner za profesionalne prevodilačke i usmene usluge u srcu Beograda.' : 'Your trusted partner for professional translation and interpretation services in the heart of Belgrade.'} />
+  <meta name="twitter:image" content="https://word.rs/images/og-image.jpg" />
 
   <!-- Structured data (LocalBusiness) -->
   {@html `<script type="application/ld+json">${jsonLd}<\/script>`}
-
-  <!-- Import Google Fonts with performance optimizations -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Lora:wght@500;700&display=swap">
-  {@html '<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Lora:wght@500;700&display=swap" rel="stylesheet" media="print" onload="this.media=\'all\'"><noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Lora:wght@500;700&display=swap" rel="stylesheet"></noscript>'}
 </svelte:head>
 
 <div class="bg-slate-50 dark:bg-zinc-900 font-sans text-slate-800 dark:text-zinc-200 transition-colors duration-300">
