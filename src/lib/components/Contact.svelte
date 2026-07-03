@@ -13,7 +13,7 @@
     <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-12 items-center text-left w-full">
       <!-- Left side: Contact Info -->
       <div class="md:col-span-2 text-slate-300 dark:text-zinc-400 scroll-animate">
-        <h3 class="text-2xl font-serif font-bold text-white">WORD</h3>
+        <h3 class="text-4xl font-serif font-bold tracking-wider text-white">WORD</h3>
         <p class="mt-4">Topličin venac 7<br>11000 Beograd, Srbija</p>
         <p class="mt-4">PIB: 106411028</p>
         <div class="mt-6 space-y-3">

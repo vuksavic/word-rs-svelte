@@ -57,9 +57,9 @@ export const content = {
       }
     ],
     whyUsSection: {
-      title: 'Prevodilačka agencija WORD postoji od 2010. godine.',
+      title: 'Zašto izabrati nas?',
       subtitle:
-				'Stekli smo veliki broj zadovoljnih klijenata, a sa mnogima od njih sarađujemo i pre osnivanja Agencije.'
+				'Preciznost, poverljivost i iskustvo na koje možete da računate.'
     },
     benefits: [
       {
@@ -110,7 +110,7 @@ export const content = {
       ]
     },
     aboutSection: {
-      title: 'Usluge profesionalnog i stručnog prevođenja',
+      title: 'Vaš pouzdan partner za prevođenje',
       p1: 'Prevodilačka agencija WORD postoji od 2010. godine.',
       p2: 'Stekli smo veliki broj zadovoljnih klijenata, a sa mnogima od njih sarađujemo i pre osnivanja Agencije.'
     },
@@ -180,9 +180,9 @@ export const content = {
       }
     ],
     whyUsSection: {
-      title: 'WORD Translation Agency has been in operation since 2010.',
+      title: 'Why Choose Us?',
       subtitle:
-				'We have gained a large number of satisfied clients, and we have been working with many of them even before the Agency was founded.'
+				'Precision, confidentiality, and experience you can count on.'
     },
     benefits: [
       {
@@ -232,7 +232,7 @@ export const content = {
       ]
     },
     aboutSection: {
-      title: 'Professional and Expert Translation Services',
+      title: 'Your Trusted Translation Partner',
       p1: 'WORD Translation Agency has been in operation since 2010.',
       p2: 'We have gained a large number of satisfied clients, and we have been working with many of them even before the Agency was founded.'
     },
